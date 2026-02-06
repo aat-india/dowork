@@ -23,9 +23,9 @@ function takeInput()
 
 function createNewLiElement(userInput)
 {
-    let li=document.createElement("li");
-    li.textContent=userInput;
-    myList.appendChild(li);
+    let li=document.createElement("li"); //create new li tag element
+    li.textContent=userInput; //store textcontent(user input) inside li tag
+    myList.appendChild(li); //append li element with textcontent int OL/UL tag =>mylist=>list=>UL
 }
 
 function getOldTodos()
@@ -37,11 +37,20 @@ function getOldTodos()
    {
         for(let a=0;a<oldTodos.length;a++)
         {
-            myTodoList.push(oldTodos[a])
+        myTodoList.push(oldTodos[a])
         }
     }
    console.log(myTodoList);
    
 }
 
+function showOldTodos()
+{
+    for(let a=0;a<myTodoList.length;a++)
+    {
+        createNewLiElement(myTodoList[a]);
+    }
+}
+
 getOldTodos();
+showOldTodos();
