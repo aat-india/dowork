@@ -1,4 +1,5 @@
 console.log("starts !!!!!!!!!!!!!!!!!");
+console.log("commit 2");
 const input=document.getElementById("inp");
 const btn=document.getElementById("btn");
 const myList=document.getElementById("list");
