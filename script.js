@@ -3,6 +3,7 @@ console.log("commit 2");
 const input=document.getElementById("inp");
 const btn=document.getElementById("btn");
 const myList=document.getElementById("list");
+const myTodoList=[];
 
 btn.addEventListener('click', takeInput);
 btn.addEventListener('');
@@ -15,6 +16,8 @@ function takeInput()
         alert("Empty not allowed");
         return;
     }
+    myTodoList.push(userInput);
+    localStorage.setItem("todolist",JSON.stringify(myTodoList));
     createNewLiElement(userInput);
     input.value="";
 }
