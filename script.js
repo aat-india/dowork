@@ -6,7 +6,6 @@ const myList=document.getElementById("list");
 const myTodoList=[];
 
 btn.addEventListener('click', takeInput);
-btn.addEventListener('');
 
 function takeInput()
 {
@@ -28,3 +27,21 @@ function createNewLiElement(userInput)
     li.textContent=userInput;
     myList.appendChild(li);
 }
+
+function getOldTodos()
+{
+   // const oldTodos=localStorage.getItem("todolist");
+   // console.log(oldTodos);
+   const oldTodos=JSON.parse(localStorage.getItem("todolist"));
+   if(oldTodos)
+   {
+        for(let a=0;a<oldTodos.length;a++)
+        {
+            myTodoList.push(oldTodos[a])
+        }
+    }
+   console.log(myTodoList);
+   
+}
+
+getOldTodos();
